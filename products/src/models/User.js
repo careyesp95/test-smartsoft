@@ -16,10 +16,6 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull:false,
     },
-    purchases:{
-        type: DataTypes.ARRAY(DataTypes.JSON),
-        allowNull:false,
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

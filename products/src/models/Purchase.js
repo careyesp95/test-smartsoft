@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('product_purchase', {
+  sequelize.define('purchase', {
     id:{
       type: DataTypes.UUID,
       defaultValue:DataTypes.UUIDV4,
@@ -9,10 +9,6 @@ module.exports = (sequelize) => {
     },
     purchaseDate:{
         type: DataTypes.DATE,
-        allowNull:false,
-    },
-    products:{
-        type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull:false,
     },
     total: {
