@@ -7,7 +7,7 @@
 
 ## BoilerPlate
 
-El boilerplate cuenta con dos carpetas: `products` y `gateway`. En estas carpetas estará el código del back-end y el enter point respectivamente.
+El boilerplate cuenta con la carpeta: `products`. En esta carpeta estará el código del back-end y su entry point respectivamente.
 
 #### Tecnologías implementadas:
 - [ ] NodeJs
@@ -16,15 +16,18 @@ El boilerplate cuenta con dos carpetas: `products` y `gateway`. En estas carpeta
 - [ ] ORM: Sequelize
 
 ## Comenzando
+ 1. puede clonar el repositiro con el siguiente CMD: 
+ git clone https://github.com/careyesp95/test-smartsoft.git
 
- 
- 1. En `products` crear un archivo llamado: `.env` que tenga la siguiente forma: 
+
+ 2. En `products` crear un archivo llamado: `.env` que tenga la siguiente forma: 
  
 ```
 DB_USER=usuariodepostgres
 DB_PASSWORD=passwordDePostgres
 DB_HOST=localhost
 DB_NAME=products
+SECRET_KEY=smartsoft
 ```
 
 

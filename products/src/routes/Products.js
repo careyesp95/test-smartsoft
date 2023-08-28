@@ -6,10 +6,10 @@ const router = Router();
 
 router.get("/", controller.getProducts);
 
-router.post("/", controller.crearProducto);
+router.post("/", controller.createProduct);
 
 router.delete("/:name", controller.deleteProduct);
 
-router.put("/:name", controller.actualizarProducto);
+router.put("/:name", controller.updateProduct);
 
 module.exports = router;

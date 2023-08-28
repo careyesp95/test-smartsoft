@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+   products:
+    container_name: products
+    restart: always
+    build: ./products
+    ports:
+      - "8001:8001"
+
+  

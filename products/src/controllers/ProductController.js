@@ -6,14 +6,14 @@ const getProducts = async (req, res, next) => {
         if(products.length < 1){
             res.status(404).send("No hay productos en la base de datos")
         }else{
-            res.status(200).send(products);
+            res.status(202).send(products);
         }
     }catch(err){
         next(err);
     }
 }
 
-const crearProducto = async (req, res, next) => {
+const createProduct = async (req, res, next) => {
     const { name, category, price, quantity } = req.body;
     if (name && category && price && quantity) {
         try {
@@ -23,7 +23,7 @@ const crearProducto = async (req, res, next) => {
                 price: price,
                 quantity: quantity
             });
-            return res.send(
+            return res.status(201).send(
                 await Product.findByPk(newProduct.id)
             ); 
         } catch (err) {
@@ -50,7 +50,7 @@ const deleteProduct = async (req, res, next) => {
                         name,
                     },
                 });
-                return res.status(200).send("El producto ha sido eliminado de la base de datos exitosamente");
+                return res.status(202).send("El producto ha sido eliminado de la base de datos exitosamente");
             }else {
                 res.status(404).send("El producto no existe en la base de datos")
             }
@@ -62,7 +62,7 @@ const deleteProduct = async (req, res, next) => {
     }
 }
 
-const actualizarProducto = async (req, res, next) => {
+const updateProduct = async (req, res, next) => {
     const { name } = req.params;
     const { category, price, quantity } = req.body;
     try {
@@ -86,7 +86,7 @@ const actualizarProducto = async (req, res, next) => {
                     },
                 }
             );
-            return res.status(200).send("El producto ha sido modificado exitosamente");
+            return res.status(202).send("El producto ha sido modificado exitosamente");
         } else {
             res.status(404).send("El producto no existe en la base de datos")
         }
@@ -97,7 +97,7 @@ const actualizarProducto = async (req, res, next) => {
 
 module.exports = {
     getProducts,
-    crearProducto,
+    createProduct,
     deleteProduct,
-    actualizarProducto
+    updateProduct
 }
