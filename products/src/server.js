@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const routerProducts = require('./routes/index.js');
+const routes = require('./routes/index.js');
 
 
 require('./data/index.js');
@@ -22,7 +22,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use('/products', routerProducts);
+server.use('/', routes);
 
 
 server.use((err, req, res, next) => { 
